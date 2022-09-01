@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
   //just attach cookie to the resposne
   attachCookiesToResponse({ res, user: tokenUser })
 
-  res.status(StatusCodes.CREATED).json({
+  res.status(StatusCodes.OK).json({
     user: tokenUser,
   })
 }
@@ -39,7 +39,7 @@ exports.login = async (req, res) => {
   //just attach cookie to the resposne
   attachCookiesToResponse({ res, user: tokenUser })
 
-  res.status(StatusCodes.CREATED).json({
+  res.status(StatusCodes.OK).json({
     user: tokenUser,
   })
 }

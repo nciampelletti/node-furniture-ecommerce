@@ -4,6 +4,7 @@ const attachCookiesToResponse = ({ res, user }) => {
   const token = createJWT({ payload: user })
 
   const oneDay = 1000 * 60 * 60 * 24 //1 sec- 1000 * 60 * 60 * 24  =1d
+
   res.cookie("token", token, {
     httpOnly: true,
     expires: new Date(Date.now() + oneDay),

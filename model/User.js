@@ -33,6 +33,13 @@ const userSchema = new mongoose.Schema({
 })
 
 userSchema.pre("save", async function (next) {
+  // console.log(this.modifiedPaths())
+  // console.log(this.isModified("name"))
+
+  //to prevent re-hashing password again and again on update of name/email
+  //rehash or hash ONLY if password is modified
+  if (!this.isModified("password")) return
+
   const salt = await bcrypt.genSalt(10)
   const hashedPwd = await bcrypt.hash(this.password, salt)
 
