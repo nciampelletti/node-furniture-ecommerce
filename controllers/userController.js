@@ -33,30 +33,6 @@ exports.showCurrentUser = async (req, res, next) => {
   })
 }
 
-//update user with findOneandUpdate
-// exports.updateUser = async (req, res, next) => {
-//   const { name, email } = req.body
-
-//   if (!name || !email) {
-//     throw new CustomError.BadRequestError("Please provide both name and email")
-//   }
-
-//   const user = await User.findByIdAndUpdate(
-//     { _id: req.user.userId },
-//     { name, email },
-//     { new: true, runValidators: true }
-//   )
-
-//   const tokenUser = createTokenUser(user)
-
-//   //just attach cookie to the resposne
-//   attachCookiesToResponse({ res, user: tokenUser })
-
-//   res.status(StatusCodes.OK).json({
-//     user: tokenUser,
-//   })
-// }
-
 //update user with user.save
 exports.updateUser = async (req, res, next) => {
   const { name, email } = req.body
