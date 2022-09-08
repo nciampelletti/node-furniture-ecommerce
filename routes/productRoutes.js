@@ -18,16 +18,17 @@ const {
 router
   .route("/")
   .get(getAllProducts) //access to public
-  .post(authenticateUser, authorizePermissions("admin"), createProduct)
+  .post([authenticateUser, authorizePermissions("admin")], createProduct)
+
+//make sure it is pit befor /:id route so it doesnt get treated as /:id route
+router
+  .route("/uploadImage")
+  .post([authenticateUser, authorizePermissions("admin")], uploadImage)
 
 router
   .route("/:id")
   .get(getSingleProduct) //access to public
-  .patch(authenticateUser, authorizePermissions("admin"), updateProduct)
-  .delete(authenticateUser, authorizePermissions("admin"), deleteProduct)
-
-router
-  .route("/uploadImage")
-  .post(authenticateUser, authorizePermissions("admin"), uploadImage)
+  .patch([authenticateUser, authorizePermissions("admin")], updateProduct)
+  .delete([authenticateUser, authorizePermissions("admin")], deleteProduct)
 
 module.exports = router
