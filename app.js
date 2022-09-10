@@ -8,6 +8,7 @@ const app = express()
 const morgan = require("morgan")
 const cookieParser = require("cookie-parser")
 const cors = require("cors")
+const fileUpload = require("express-fileupload")
 
 //DATABASE
 const connectDB = require("./db/connect")
@@ -20,6 +21,7 @@ app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET_KEY))
 app.use(cors())
 app.use(express.static("./public"))
+app.use(fileUpload())
 
 app.get("/", (req, res) => {
   res.send("hello")
