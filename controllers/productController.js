@@ -25,7 +25,8 @@ exports.createProduct = async (req, res) => {
 exports.getSingleProduct = async (req, res) => {
   const { id: productId } = req.params
 
-  const product = await Product.findOne({ _id: productId })
+  //for populate the virtualis created on the Product model
+  const product = await Product.findOne({ _id: productId }).populate("reviews")
 
   if (!product) {
     throw new CustomError.NotFoundError(`No product with id: ${productId}`)
