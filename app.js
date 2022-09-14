@@ -42,20 +42,11 @@ app.use(cors())
 //Set security HTTP HEADERS
 app.use(helmet()) //secure header
 
-app.use(morgan("tiny"))
+// app.use(morgan("tiny"))
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET_KEY))
 app.use(express.static("./public"))
 app.use(fileUpload())
-
-app.get("/", (req, res) => {
-  res.send("hello")
-})
-
-app.get("/api/v1", (req, res) => {
-  console.log("sadas", req.signedCookies)
-  res.send("coocies")
-})
 
 //ROUTERS
 const authRouter = require("./routes/authRoutes")
