@@ -7,8 +7,14 @@ const app = express()
 //rest of the packages
 const morgan = require("morgan")
 const cookieParser = require("cookie-parser")
-const cors = require("cors")
 const fileUpload = require("express-fileupload")
+
+//security packages
+const rateLimiter = require("express-rate-limit")
+const helmet = require("helmet")
+const xss = require("xss-clean")
+const cors = require("cors")
+const mongoSanitize = require("express-mongo-sanitize")
 
 //DATABASE
 const connectDB = require("./db/connect")
@@ -16,10 +22,29 @@ const connectDB = require("./db/connect")
 const port = process.env.PORT || 4000
 const con = process.env.DATABASE
 
+app.set("trust proxy", 1)
+
+//limit requests from the same API
+const limiter = rateLimiter({
+  max: 60, //allowed 60 requests from the same IP per 15 mins
+  windowMs: 15 * 60 * 1000, //15mins * 60sec *  1000msec
+  message: "Too many requests from this IP. Please try again in an hour",
+})
+app.use("/api", limiter) //we apply only to api routes
+
+//Data sanitization against NoSQL query injections
+app.use(mongoSanitize())
+//Data sanitization against XSS attacks
+//that will clean input from mellicious HTML
+app.use(xss())
+// Implement CORS
+app.use(cors())
+//Set security HTTP HEADERS
+app.use(helmet()) //secure header
+
 app.use(morgan("tiny"))
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET_KEY))
-app.use(cors())
 app.use(express.static("./public"))
 app.use(fileUpload())
 
