@@ -3,7 +3,7 @@
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="ie=edge">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Ciampelletti E-Commerce</title>
+<title>E-Commerce</title>
 <style media=screen>
  /*!* Bootstrap v3.3.7 (http://getbootstrap.com)
 * Copyright 2011-2016 Twitter, Inc.
@@ -7873,7 +7873,7 @@
   margin: 1px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #000;
+  background-color: #000\9;
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 10px
@@ -8397,7 +8397,7 @@
 <div class=container-fluid>
  <div class=row>
   <div class="col-md-12 collection-intro">
-   <h3>Ciampelletti E-Commerce</h3>
+   <h3>E-Commerce</h3>
    <p>
   </div>
   <div class=col-md-12>
@@ -8463,11 +8463,15 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/users
+            {{URL}}/users
            </h4>
           </a></div>
          <div id=collapse-User-GetAllUsers class="panel-collapse collapse">
-          <div class=panel-body></div>
+          <div class=panel-body>
+           <h5 class="label label-default">Description</h5><br><small>
+            <p>retrieves all active users.
+           </small><br><br>
+          </div>
          </div>
         </div>
         <div class="panel panel-info" id=jump-User-GetSingleUser>
@@ -8477,11 +8481,14 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/users/:id
+            {{URL}}/users/:id
            </h4>
           </a></div>
          <div id=collapse-User-GetSingleUser class="panel-collapse collapse">
           <div class=panel-body>
+           <h5 class="label label-default">Description</h5><br><small>
+            <p>get single active user by Id. this is a secured route
+           </small><br><br>
            <h5 class="label label-info">URL Variables</h5>
            <table class="table table-hover">
             <thead>
@@ -8505,11 +8512,16 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/users/showMe
+            {{URL}}/users/showMe
            </h4>
           </a></div>
          <div id=collapse-User-ShowCurrentUser class="panel-collapse collapse">
-          <div class=panel-body></div>
+          <div class=panel-body>
+           <h5 class="label label-default">Description</h5><br><small>
+            <p>returns currently identified user. This is a secure route
+            <p>EndFragment
+           </small><br><br>
+          </div>
          </div>
         </div>
         <div class="panel panel-warning" id=jump-User-UpdateUser>
@@ -8519,12 +8531,15 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-warning">PATCH</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/users/updateUser
+            {{URL}}/users/updateUser
            </h4>
           </a>
          </div>
          <div id=collapse-User-UpdateUser class="panel-collapse collapse">
           <div class=panel-body>
+           <h5 class="label label-default">Description</h5><br><small>
+            <p>Update a user. This is a secure route
+           </small><br><br>
            <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
             &#34;name&#34;: &#34;gabbi&#34;,
             &#34;email&#34;: &#34;gabbi@shaw.ca&#34;
@@ -8540,7 +8555,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-warning">PATCH</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/users/updateUserPassword
+            {{URL}}/users/updateUserPassword
            </h4>
           </a>
          </div>
@@ -8575,11 +8590,15 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products
+            {{URL}}/products
            </h4>
           </a></div>
          <div id=collapse-Product-GetAllProducts class="panel-collapse collapse">
-          <div class=panel-body></div>
+          <div class=panel-body>
+           <h5 class="label label-default">Description</h5><br><small>
+            <p>Get all available products.
+           </small><br><br>
+          </div>
          </div>
         </div>
         <div class="panel panel-success" id=jump-Product-CreateProduct>
@@ -8590,7 +8609,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products
+            {{URL}}/products
            </h4>
           </a>
          </div>
@@ -8621,7 +8640,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-warning">PATCH</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products/:id
+            {{URL}}/products/:id
            </h4>
           </a>
          </div>
@@ -8654,7 +8673,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products/:id
+            {{URL}}/products/:id
            </h4>
           </a></div>
          <div id=collapse-Product-GetSingleProduct class="panel-collapse collapse">
@@ -8682,7 +8701,7 @@
              Reviews</strong> &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products/:id/reviews
+            {{URL}}/products/:id/reviews
            </h4>
           </a></div>
          <div id=collapse-Product-GetSingleProductReviews class="panel-collapse collapse">
@@ -8710,7 +8729,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-danger">DELETE</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products/:id
+            {{URL}}/products/:id
            </h4>
           </a></div>
          <div id=collapse-Product-DeleteProduct class="panel-collapse collapse">
@@ -8738,7 +8757,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/products/uploadImage
+            {{URL}}/products/uploadImage
            </h4>
           </a></div>
          <div id=collapse-Product-UploadImage class="panel-collapse collapse">
@@ -8766,7 +8785,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/auth/logout
+            {{URL}}/auth/logout
            </h4>
           </a></div>
          <div id=collapse-Auth-LogoutUser class="panel-collapse collapse">
@@ -8780,7 +8799,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/auth/register
+            {{URL}}/auth/register
            </h4>
           </a>
          </div>
@@ -8801,7 +8820,7 @@
            <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Login User</strong> &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/auth/login
+            {{URL}}/auth/login
            </h4>
           </a>
          </div>
@@ -8836,7 +8855,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/reviews
+            {{URL}}/reviews
            </h4>
           </a>
          </div>
@@ -8859,7 +8878,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/reviews
+            {{URL}}/reviews
            </h4>
           </a></div>
          <div id=collapse-Review-GetAllReviews class="panel-collapse collapse">
@@ -8873,7 +8892,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/reviews/:id
+            {{URL}}/reviews/:id
            </h4>
           </a></div>
          <div id=collapse-Review-GetSingleReview class="panel-collapse collapse">
@@ -8901,7 +8920,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-warning">PATCH</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/reviews/:id
+            {{URL}}/reviews/:id
            </h4>
           </a>
          </div>
@@ -8936,7 +8955,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-danger">DELETE</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/reviews/:id
+            {{URL}}/reviews/:id
            </h4>
           </a></div>
          <div id=collapse-Review-DeleteReview class="panel-collapse collapse">
@@ -8978,7 +8997,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-success">POST</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/orders
+            {{URL}}/orders
            </h4>
           </a>
          </div>
@@ -9017,7 +9036,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/orders
+            {{URL}}/orders
            </h4>
           </a></div>
          <div id=collapse-Order-GetAllOrders class="panel-collapse collapse">
@@ -9031,7 +9050,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/orders/:id
+            {{URL}}/orders/:id
            </h4>
           </a></div>
          <div id=collapse-Order-GetSingleOrder class="panel-collapse collapse">
@@ -9059,7 +9078,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-warning">PATCH</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/orders/:id
+            {{URL}}/orders/:id
            </h4>
           </a></div>
          <div id=collapse-Order-UpdateOrder class="panel-collapse collapse">
@@ -9087,7 +9106,7 @@
             &nbsp;|&nbsp;
             <strong class="request-method border-info">GET</strong>
             &nbsp;
-            https://ciampelletti-ecommerce.herokuapp.com/api/v1/orders/showAllMyOrders
+            {{URL}}/orders/showAllMyOrders
            </h4>
           </a></div>
          <div id=collapse-Order-ShowCurrentUserOrders class="panel-collapse collapse">
@@ -9101,12 +9120,13 @@
    </div>
   </div>
  </div>
- <script src="./browser-app.js"></script><br><br>
+ <br><br>
+ <script src="./browser-app.js"></script>
  <footer class="navbar-default navbar-fixed-bottom">
   <div class=container-fluid>
    <div class="span12 text-center"><span data-toggle=tooltip
      title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Generated
-     at 2022-09-14 10:13:33 by <a href=https://github.com/thedevsaddam/docgen target=_blank
+     at 2022-09-20 22:45:35 by <a href=https://github.com/thedevsaddam/docgen target=_blank
       class=text-muted>docgen</a></span></div>
   </div>
  </footer>
