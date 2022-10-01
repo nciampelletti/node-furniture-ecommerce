@@ -22,7 +22,7 @@ const connectDB = require("./db/connect")
 const port = process.env.PORT || 4000
 const con = process.env.DATABASE
 
-//app.set("trust proxy", 1)
+app.set("trust proxy", 1)
 
 //limit requests from the same API
 const limiter = rateLimiter({
@@ -37,24 +37,26 @@ app.use(mongoSanitize())
 //Data sanitization against XSS attacks
 //that will clean input from mellicious HTML
 app.use(xss())
-// Implement CORS
-const allowedOrigins = [
-  "https://ciampelletti-tours.netlify.app",
-  "http://localhost",
-  "http://localhost:3000",
-  "http://localhost:3100",
-]
+// // Implement CORS
+app.options("*", cors())
 
-const corsOptions = {
-  credentials: true,
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error("Origin not allowed by CORS"))
-    }
-  },
-}
+// const allowedOrigins = [
+//   "https://ciampelletti-tours.netlify.app",
+//   "http://localhost",
+//   "http://localhost:3000",
+//   "http://localhost:3100",
+// ]
+
+// const corsOptions = {
+//   credentials: true,
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin) || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error("Origin not allowed by CORS"))
+//     }
+//   },
+// }
 
 //Set security HTTP HEADERS
 app.use(helmet()) //secure header
