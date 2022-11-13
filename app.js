@@ -47,7 +47,7 @@ app.use(
   cors({
     origin: allowedDomains,
     methods: ["GET", "PATCH", "PUT", "DELETE", "POST", "patch"],
-    credentials: true,
+    // credentials: true,
   })
 )
 
