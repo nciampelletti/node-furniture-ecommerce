@@ -38,25 +38,18 @@ app.use(mongoSanitize())
 //that will clean input from mellicious HTML
 app.use(xss())
 // // Implement CORS
-app.options("*", cors())
+const allowedDomains = [
+  "http://localhost:3000",
+  "https://ciampelletti-ecommerce.netlify.app",
+]
 
-// const allowedOrigins = [
-//   "https://ciampelletti-tours.netlify.app",
-//   "http://localhost",
-//   "http://localhost:3000",
-//   "http://localhost:3100",
-// ]
-
-// const corsOptions = {
-//   credentials: true,
-//   origin: (origin, callback) => {
-//     if (allowedOrigins.includes(origin) || !origin) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error("Origin not allowed by CORS"))
-//     }
-//   },
-// }
+app.use(
+  cors({
+    origin: allowedDomains,
+    methods: ["GET", "PATCH", "PUT", "DELETE", "POST", "patch"],
+    credentials: true,
+  })
+)
 
 //Set security HTTP HEADERS
 app.use(helmet()) //secure header
